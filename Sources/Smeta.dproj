@@ -1,0 +1,564 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{BBFCAF54-D0A4-414E-84E0-582D937B7A42}</ProjectGuid>
+        <MainSource>Smeta.dpr</MainSource>
+        <ProjectVersion>15.3</ProjectVersion>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <AppType>Application</AppType>
+        <FrameworkType>VCL</FrameworkType>
+        <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>1</TargetedPlatforms>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <VerInfo_Build>6450</VerInfo_Build>
+        <VerInfo_Debug>true</VerInfo_Debug>
+        <VerInfo_AutoGenVersion>true</VerInfo_AutoGenVersion>
+        <VerInfo_Locale>1049</VerInfo_Locale>
+        <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Winapi;FireDAC.VCLUI;FMX;Data.Win;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Keys>CompanyName=Янович Игорь;FileDescription=Расчёт сметы;FileVersion=1.0.0.6450;InternalName=Estimate;LegalCopyright=© 2013 Янович Игорь;LegalTrademarks=;OriginalFilename=Smeta.exe;ProductName=Смета;ProductVersion=1.0;Comments=Программа для расчёта сметы</VerInfo_Keys>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <DCC_UsePackage>vclx;vcl;vclimg;dbrtl;Rave90VCL;bdertl;rtl;vclactnband;xmlrtl;VclSmp;svnui;svn;TeeUI;TeeDB;Tee;vcldb;vcldbx;vcltouch;dsnap;dsnapcon;vclib;ibxpress;adortl;IndyCore;IndySystem;IndyProtocols;vclie;inet;inetdb;webdsnap;websnap;inetdbbde;inetdbxpress;vclribbon;dbexpress;DbxCommonDriver;DataSnapIndy10ServerTransport;DataSnapProviderClient;DbxClientDriver;DataSnapClient;dbxcds;DataSnapServer;AzureCloud;DBXInterBaseDriver;DBXMySQLDriver;DBXFirebirdDriver;DBXSybaseASEDriver;DBXSybaseASADriver;DBXOracleDriver;DBXMSSQLDriver;DBXInformixDriver;DBXDb2Driver;HotKeyManager_D6plus;VirtualTreesR;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_ImageBase>00400000</DCC_ImageBase>
+        <DCC_DcuOutput>.\$(Config)\$(Platform)</DCC_DcuOutput>
+        <DCC_ExeOutput>.\$(Config)\$(Platform)</DCC_ExeOutput>
+        <DCC_E>false</DCC_E>
+        <DCC_N>false</DCC_N>
+        <DCC_S>false</DCC_S>
+        <DCC_F>false</DCC_F>
+        <DCC_K>false</DCC_K>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <Icon_MainIcon>Smeta_Icon.ico</Icon_MainIcon>
+        <DCC_Namespace>System.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <Icon_MainIcon>Smeta_Icon.ico</Icon_MainIcon>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <VerInfo_PreRelease>true</VerInfo_PreRelease>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+        <PostBuildEvent><![CDATA[upload.bat
+$(PostBuildEvent)]]></PostBuildEvent>
+        <DCC_Optimize>true</DCC_Optimize>
+        <VerInfo_Build>0</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=;FileDescription=SMR - HPP 2012;FileVersion=1.0.0.0;InternalName=SMR - HPP 2012;LegalCopyright=БНТУ;LegalTrademarks=;OriginalFilename=SMR-HPP2012.exe;ProductName=SMR - HPP 2012;ProductVersion=1.0.0.0;Comments=НИЧ БНТУ</VerInfo_Keys>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="DataModule.pas">
+            <Form>DM</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Main.pas">
+            <Form>FormMain</Form>
+        </DCCReference>
+        <DCCReference Include="TariffsMechanism.pas">
+            <Form>FormTariffsMechanism</Form>
+        </DCCReference>
+        <DCCReference Include="TariffsDump.pas">
+            <Form>FormTariffsDump</Form>
+        </DCCReference>
+        <DCCReference Include="TariffsIndex.pas">
+            <Form>FormTariffsIndex</Form>
+        </DCCReference>
+        <DCCReference Include="About.pas">
+            <Form>fAbout</Form>
+        </DCCReference>
+        <DCCReference Include="CalculationEstimate.pas">
+            <Form>FormCalculationEstimate</Form>
+        </DCCReference>
+        <DCCReference Include="ConnectDatabase.pas">
+            <Form>FormConnectDatabase</Form>
+        </DCCReference>
+        <DCCReference Include="CardObject.pas">
+            <Form>fCardObject</Form>
+        </DCCReference>
+        <DCCReference Include="ProgramSettings.pas">
+            <Form>FormProgramSettings</Form>
+        </DCCReference>
+        <DCCReference Include="Waiting.pas">
+            <Form>FormWaiting</Form>
+        </DCCReference>
+        <DCCReference Include="KC6.pas">
+            <Form>fKC6</Form>
+        </DCCReference>
+        <DCCReference Include="ActC6.pas">
+            <Form>FormActC6</Form>
+        </DCCReference>
+        <DCCReference Include="WorkSchedule.pas">
+            <Form>FormWorkSchedule</Form>
+        </DCCReference>
+        <DCCReference Include="HelpC3.pas">
+            <Form>FormHelpC3</Form>
+        </DCCReference>
+        <DCCReference Include="Requisites.pas">
+            <Form>FormRequisites</Form>
+        </DCCReference>
+        <DCCReference Include="HelpC5.pas">
+            <Form>FormHelpC5</Form>
+        </DCCReference>
+        <DCCReference Include="CatalogSSR.pas">
+            <Form>FormCatalogSSR</Form>
+        </DCCReference>
+        <DCCReference Include="OXRandOPR.pas">
+            <Form>FormOXRandOPR</Form>
+        </DCCReference>
+        <DCCReference Include="SignatureSSR.pas">
+            <Form>FormSignatureSSR</Form>
+        </DCCReference>
+        <DCCReference Include="SummaryCalculationSettings.pas">
+            <Form>FormSummaryCalculationSettings</Form>
+        </DCCReference>
+        <DCCReference Include="DataTransfer.pas">
+            <Form>FormDataTransfer</Form>
+        </DCCReference>
+        <DCCReference Include="CalculationSettings.pas">
+            <Form>FormCalculationSettings</Form>
+        </DCCReference>
+        <DCCReference Include="BasicData.pas">
+            <Form>FormBasicData</Form>
+        </DCCReference>
+        <DCCReference Include="CardEstimate.pas">
+            <Form>fCardEstimate</Form>
+        </DCCReference>
+        <DCCReference Include="ObjectsAndEstimates.pas">
+            <Form>fObjectsAndEstimates</Form>
+        </DCCReference>
+        <DCCReference Include="Transportation.pas">
+            <Form>FormTransportation</Form>
+        </DCCReference>
+        <DCCReference Include="SaveEstimate.pas">
+            <Form>FormSaveEstimate</Form>
+        </DCCReference>
+        <DCCReference Include="OwnData.pas">
+            <Form>FormOwnData</Form>
+        </DCCReference>
+        <DCCReference Include="fFrameProgressBar.pas">
+            <Form>FrameProgressBar</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="DrawingTables.pas"/>
+        <DCCReference Include="fFrameSmeta.pas">
+            <Form>SmetaFrame</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="fFrameStatusBar.pas">
+            <Form>FrameStatusBar</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="fFrameOXROPR.pas">
+            <Form>FrameOXROPR</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="fFramePriceDumps.pas">
+            <Form>FramePriceDumps</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="fFramePriceTransportations.pas">
+            <Form>FramePriceTransportations</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="fFrameRates.pas">
+            <Form>FrameRates</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="fFrameSSR.pas">
+            <Form>FrameSSR</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="TariffsTransportanion.pas">
+            <Form>FormTariffsTransportation</Form>
+        </DCCReference>
+        <DCCReference Include="ReferenceData.pas">
+            <Form>FormReferenceData</Form>
+        </DCCReference>
+        <DCCReference Include="PricesOwnData.pas">
+            <Form>FormPricesOwnData</Form>
+        </DCCReference>
+        <DCCReference Include="PricesReferenceData.pas">
+            <Form>FormPricesReferenceData</Form>
+        </DCCReference>
+        <DCCReference Include="AdditionData.pas">
+            <Form>FormAdditionData</Form>
+        </DCCReference>
+        <DCCReference Include="CardMaterial.pas">
+            <Form>FormCardMaterial</Form>
+        </DCCReference>
+        <DCCReference Include="CardOrganization.pas">
+            <Form>fCardOrganization</Form>
+        </DCCReference>
+        <DCCReference Include="fTypesActs.pas">
+            <Form>FrameTypesActs</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="fIndexesChangeCost.pas">
+            <Form>FrameIndexesChangeCost</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="PartsEstimates.pas">
+            <Form>fPartsEstimates</Form>
+        </DCCReference>
+        <DCCReference Include="TypesActs.pas">
+            <Form>FormTypesActs</Form>
+        </DCCReference>
+        <DCCReference Include="IndexesChangeCost.pas">
+            <Form>FormIndexesChangeCost</Form>
+        </DCCReference>
+        <DCCReference Include="CategoriesObjects.pas">
+            <Form>fCategoriesObjects</Form>
+        </DCCReference>
+        <DCCReference Include="CardTypesActs.pas">
+            <Form>FormCardTypesActs</Form>
+        </DCCReference>
+        <DCCReference Include="CardIndexesChangeCost.pas">
+            <Form>FormCardIndexesChangeCost</Form>
+        </DCCReference>
+        <DCCReference Include="CardAct.pas">
+            <Form>fCardAct</Form>
+        </DCCReference>
+        <DCCReference Include="Tools.pas"/>
+        <DCCReference Include="KC6Journal.pas">
+            <Form>fKC6Journal</Form>
+        </DCCReference>
+        <DCCReference Include="CalculationEstimateSummaryCalculations.pas">
+            <Form>frCalculationEstimateSummaryCalculations</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="CalculationEstimateSSR.pas">
+            <Form>frCalculationEstimateSSR</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="CalcResourceFact.pas">
+            <Form>fCalcResourceFact</Form>
+        </DCCReference>
+        <DCCReference Include="CalculationDump.pas">
+            <Form>FormCalculationDump</Form>
+        </DCCReference>
+        <DCCReference Include="CalcTravel.pas">
+            <Form>fCalcTravel</Form>
+        </DCCReference>
+        <DCCReference Include="UniDict.pas">
+            <Form>fUniDict</Form>
+        </DCCReference>
+        <DCCReference Include="UpdateModule.pas"/>
+        <DCCReference Include="TravelList.pas">
+            <Form>fTravelList</Form>
+        </DCCReference>
+        <DCCReference Include="fUpdate.pas">
+            <Form>UpdateForm</Form>
+        </DCCReference>
+        <DCCReference Include="EditExpression.pas">
+            <Form>fEditExpression</Form>
+        </DCCReference>
+        <DCCReference Include="dmReportU.pas">
+            <Form>dmReportF</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Coef.pas">
+            <Form>fCoefficients</Form>
+        </DCCReference>
+        <DCCReference Include="ArhivModule.pas"/>
+        <DCCReference Include="GlobsAndConst.pas"/>
+        <DCCReference Include="WinterPrice.pas">
+            <Form>fWinterPrice</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="ReplacementMatAndMech.pas">
+            <Form>frmReplacement</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="TariffDict.pas">
+            <Form>fTariffDict</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="OXROPRSetup.pas">
+            <Form>fOXROPRSetup</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="ImportExportModule.pas"/>
+        <DCCReference Include="CalcTravelWork.pas">
+            <Form>fCalcTravelWork</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="fFrameSpr.pas">
+            <Form>SprFrame</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="fFrameMaterial.pas">
+            <Form>SprMaterial</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="OrganizationsEx.pas">
+            <Form>fOrganizationsEx</Form>
+        </DCCReference>
+        <DCCReference Include="fFrameMechanizm.pas">
+            <Form>SprMechanizm</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="fFrameEquipment.pas">
+            <Form>SprEquipment</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="TreeEstimate.pas">
+            <Form>fTreeEstimate</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="SuppAgreement.pas">
+            <Form>fSuppAgreement</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="CalcWorkerDepartment.pas">
+            <Form>fCalcWorkerDepartment</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="fFrameCalculator.pas">
+            <Form>Calculator</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="NormativDirectory.pas">
+            <Form>fNormativDirectory</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="CardObjectContractorServices.pas">
+            <Form>fCardObjectContractorServices</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="ForecastCostIndex.pas">
+            <Form>fForecastCostIndex</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="FileStorage.pas">
+            <Form>fFileStorage</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="ForemanList.pas">
+            <Form>fForemanList</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="OXROPR.pas">
+            <Form>fOXROPR</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="SSR.pas">
+            <Form>fSSR</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="SprController.pas"/>
+        <DCCReference Include="CalcResource.pas">
+            <Form>fCalcResource</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="CalcResourceFactDiff.pas">
+            <Form>fCalcResourceFactDiff</Form>
+        </DCCReference>
+        <DCCReference Include="CategoryList.pas">
+            <Form>fCategoryList</Form>
+        </DCCReference>
+        <DCCReference Include="ArhivRestore.pas">
+            <Form>frmArhRestore</Form>
+        </DCCReference>
+        <DCCReference Include="NormativDictHelp.pas">
+            <Form>fNormativDictHelp</Form>
+        </DCCReference>
+        <DCCReference Include="BuildZone.pas">
+            <Form>fBuildZone</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="HelpKfSt.pas">
+            <Form>fHelpKfSt</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="LogIn.pas">
+            <Form>fLogIn</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Users.pas">
+            <Form>fUsers</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="RoundSetup.pas">
+            <Form>fRoundSetup</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="InstructionHelp.pas">
+            <Form>fInstructionHelp</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="TypeWorkList.pas">
+            <Form>fTypeWorkList</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="SectionEstimateList.pas">
+            <Form>fSectionEstimateList</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="SprSelection.pas">
+            <Form>fSprSelection</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="TranspPersSelect.pas">
+            <Form>fTrPersSelect</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="CopyToOwnDialog.pas">
+            <Form>fCopyToOwnDialog</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="SelectDialog.pas">
+            <Form>fSelectDialog</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="ManualSprItem.pas">
+            <Form>ManSprCardForm</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="ManualPriceSelect.pas">
+            <Form>fmManPriceSelect</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="DebugTables.pas">
+            <Form>fDebugTables</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="fFrameLoading.pas">
+            <Form>FrameLoading</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="UserAccess.pas">
+            <Form>fUserAccess</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <Import Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')" Project="$(BDS)\Bin\CodeGear.Delphi.Targets"/>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Delphi.Personality>
+                <VersionInfo>
+                    <VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+                    <VersionInfo Name="AutoIncBuild">True</VersionInfo>
+                    <VersionInfo Name="MajorVer">1</VersionInfo>
+                    <VersionInfo Name="MinorVer">0</VersionInfo>
+                    <VersionInfo Name="Release">0</VersionInfo>
+                    <VersionInfo Name="Build">6734</VersionInfo>
+                    <VersionInfo Name="Debug">True</VersionInfo>
+                    <VersionInfo Name="PreRelease">False</VersionInfo>
+                    <VersionInfo Name="Special">False</VersionInfo>
+                    <VersionInfo Name="Private">False</VersionInfo>
+                    <VersionInfo Name="DLL">False</VersionInfo>
+                    <VersionInfo Name="Locale">1049</VersionInfo>
+                    <VersionInfo Name="CodePage">1251</VersionInfo>
+                </VersionInfo>
+                <VersionInfoKeys>
+                    <VersionInfoKeys Name="CompanyName">Янович Игорь</VersionInfoKeys>
+                    <VersionInfoKeys Name="FileDescription">Расчёт сметы</VersionInfoKeys>
+                    <VersionInfoKeys Name="FileVersion">1.0.0.6734</VersionInfoKeys>
+                    <VersionInfoKeys Name="InternalName">Estimate</VersionInfoKeys>
+                    <VersionInfoKeys Name="LegalCopyright">© 2013 Янович Игорь</VersionInfoKeys>
+                    <VersionInfoKeys Name="LegalTrademarks"/>
+                    <VersionInfoKeys Name="OriginalFilename">Smeta.exe</VersionInfoKeys>
+                    <VersionInfoKeys Name="ProductName">Смета</VersionInfoKeys>
+                    <VersionInfoKeys Name="ProductVersion">1.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="Comments">Программа для расчёта сметы</VersionInfoKeys>
+                </VersionInfoKeys>
+                <Source>
+                    <Source Name="MainSource">Smeta.dpr</Source>
+                </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k190.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp190.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
+            </Delphi.Personality>
+            <Platforms>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+            <ModelSupport>False</ModelSupport>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+    <PropertyGroup Condition="'$(Config)'=='Debug' And '$(Platform)'=='Win32'">
+        <PreBuildEvent/>
+        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
+        <PreLinkEvent/>
+        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+        <PostBuildEvent>upload.bat</PostBuildEvent>
+        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+    </PropertyGroup>
+</Project>
